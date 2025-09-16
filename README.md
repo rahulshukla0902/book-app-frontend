@@ -1,8 +1,11 @@
-# React + Vite
+**Full Stack Book Application**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/c0adb852-ac48-481e-95b4-21fb29d49bde" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is the Frontend of the Book Application using React and Vite.
+There are Sections such as Top Sellers, Recommended for facilitating users to efficiently understand the categorizations.
+Each and every book has some description and a Genre.
+
+This is a Full Stack project and you can find the working application here:
+https://book-app-frontend-sepia-three.vercel.app/
