@@ -3,7 +3,7 @@
 
 <img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/c0adb852-ac48-481e-95b4-21fb29d49bde" />
 
-This is the Frontend of the Book Application using React and Vite.
+This is the Frontend of the Book Application built using React and Vite.
 There are Sections such as Top Sellers, Recommended for facilitating users to efficiently understand the categorizations.
 Each and every book has some description and a Genre.
 
