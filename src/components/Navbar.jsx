@@ -28,6 +28,9 @@ const navigation = [
   },
 ];
 
+const iconStyle =
+  "size-6 text-white/70 transition-all duration-300 hover:text-white hover:scale-110";
+
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -41,19 +44,61 @@ const Navbar = () => {
   };
 
   return (
-    <header className="max-w-screen-2xl mx-auto px-4 py-6">
-      <nav className="flex justify-between items-center">
+    <header className="fixed top-5 left-0 right-0 z-50 px-5">
+      <nav
+        className="
+    mx-auto
+    flex
+    max-w-screen-xl
+    items-center
+    justify-between
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/5
+    px-6
+    py-3
+    backdrop-blur-2xl
+    shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+  "
+      >
         <div className="flex items-center md:gap-16 gap-4">
           <Link to="/">
-            <HiMiniBars3CenterLeft className="size-6" />
+            <HiMiniBars3CenterLeft className={iconStyle} />
           </Link>
 
-          <div className="relative sm:w-72 w-40 space-x-1">
-            <IoSearchOutline className="absolute inline-block left-3 inset-y-2" />
+          <div
+            className="
+              relative
+              w-72
+              rounded-full
+              border
+              border-white/10
+              bg-white/5
+              "
+          >
+            <IoSearchOutline
+              className="
+                absolute
+                left-4
+                top-1/2
+                -translate-y-1/2
+                text-white/50
+                "
+            />
             <input
               type="text"
               placeholder="Search here"
-              className="bg-[#EAEAEA] w-full py-1 md:px-8 px-6 rounded-md focus:outline-none"
+              className="
+                w-full
+                bg-transparent
+                py-2.5
+                pl-11
+                pr-4
+                text-white
+                placeholder:text-white/40
+                focus:outline-none
+                "
             />
           </div>
         </div>
@@ -67,13 +112,14 @@ const Navbar = () => {
                     src={avatarImg}
                     alt=""
                     className={`size-7 rounded-full ${
-                      currentUser ? "ring-2 ring-blue-500" : ""
+                      currentUser ? "ring-2 ring-cyan-400/70" : ""
                     }`}
                   />
                 </button>
                 {isDropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-md z-40">
-                    <ul className="py-2">
+                  <div className="absolute right-0 mt-5 w-48 bg-black/70 backdrop-blur-xl border border-white/10
+rounded-2xl shadow-lg rounded-md z-40">
+                    <ul className="py-2 text-white">
                       {navigation.map((item) => (
                         <li
                           key={item.name}
@@ -81,7 +127,7 @@ const Navbar = () => {
                         >
                           <Link
                             to={item.href}
-                            className="block px-4 py-2 text-sm hover:bg-gray-100"
+                            className="block px-4 py-2 text-sm hover:bg-white/10"
                           >
                             {item.name}
                           </Link>
@@ -90,7 +136,7 @@ const Navbar = () => {
                       <li>
                         <button
                           onClick={handleLogOut}
-                          className="block px-4 py-2 text-sm hover:bg-gray-100"
+                          className="block w-full px-4 py-2 text-sm hover:bg-white/10 text-left"
                         >
                           Logout
                         </button>
@@ -101,18 +147,30 @@ const Navbar = () => {
               </>
             ) : (
               <Link to="/login">
-                <HiOutlineUser className="size-6" />
+                <HiOutlineUser className={iconStyle} />
               </Link>
             )}
           </div>
           <button className="hidden sm:block">
-            <HiOutlineHeart className="size-6" />
+            <HiOutlineHeart className={iconStyle} />
           </button>
           <Link
             to="/cart"
-            className="bg-primary p-1 sm:px-6 px-2 flex items-center rounded-md"
+            className="
+              flex
+              items-center
+              gap-2
+              rounded-full
+              bg-amber-400
+              px-5
+              py-2
+              font-semibold
+              text-black
+              transition
+              hover:scale-105
+              "
           >
-            <HiOutlineShoppingCart className="" />
+            <HiOutlineShoppingCart className={iconStyle} />
             {cartItems.length > 0 ? (
               <span className="text-sm font-semibold sm:ml-1">
                 {cartItems.length}

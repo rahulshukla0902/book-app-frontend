@@ -19,30 +19,38 @@ const OrderPage = () => {
 
   return (
     <div className="container mx-auto p-6">
-      <h2 className="text-2xl font-semibold mb-4">Your Orders</h2>
+      <h2 className="mb-6 text-3xl font-bold text-white">
+        Your Orders
+      </h2>
       {orders.length === 0 ? (
-        <div>No Orders Found!</div>
+        <div className="text-center text-lg text-gray-300">
+          You have not placed any orders yet.
+        </div>
       ) : (
         <div>
           {orders.map((order, index) => (
-            <div key={order._id} className="border-b mb-4 pb-4">
-              <p className="p-1 bg-secondary text-white w-10 rounded mb-1">
+            <div key={order._id} className="mb-6 border-b border-white/10 pb-6">
+              <p className="mb-2 w-fit rounded-md bg-yellow-400 px-3 py-1 text-sm font-semibold text-black">
                 # {index + 1}
               </p>
-              <h2 className="font-bold">Order ID: {order._id}</h2>
-              <p className="text-gray-600">Name: {order.name}</p>
-              <p className="text-gray-600">Email: {order.email}</p>
-              <p className="text-gray-600">Phone: {order.phone}</p>
-              <p className="text-gray-600">Total Price: ${order.totalPrice}</p>
-              <h3 className="font-semibold mt-2">Address:</h3>
-              <p>
+              <h2 className="text-lg font-semibold text-white">Order ID: {order._id}</h2>
+              <p className="text-gray-300">Name: {order.name}</p>
+              <p className="text-gray-300">Email: {order.email}</p>
+              <p className="text-gray-300">Phone: {order.phone}</p>
+              <p className="font-semibold text-yellow-400">
+                Total Price: ${order.totalPrice}
+              </p>
+              <h3 className="mt-4 font-semibold text-white">Address:</h3>
+              <p className="text-gray-300">
                 {order.address.city}, {order.address.state},{" "}
                 {order.address.country}- {order.address.zipcode}
               </p>
-              <h3 className="font-semibold mt-2">Products Id:</h3>
+              <h3 className="mt-4 font-semibold text-white">Products Id:</h3>
               <ul>
                 {order.productIds.map((productId) => (
-                  <li key={productId}>{productId}</li>
+                  <li className="font-mono text-sm text-gray-400" key={productId}>
+                    {productId}
+                  </li>
                 ))}
               </ul>
             </div>

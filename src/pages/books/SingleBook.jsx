@@ -23,40 +23,42 @@ const SingleBook = () => {
     return <div>Facing Error in Loading the Book</div>;
   }
   return (
-    <div className="max-w-lg shadow-md p-5">
-      <h1 className="text-2xl font-bold mb-6">{book.title}</h1>
+    <div className="mx-auto mt-12 mb-12 max-w-6xl rounded-2xl border border-white/10 bg-white/10 p-8 backdrop-blur-xl">
+      <h1 className="mb-6 text-4xl font-bold text-white">{book.title}</h1>
 
-      <div>
-        <div>
+      <div className="flex flex-col gap-10 md:flex-row">
+        <div className="md:w-1/3 flex justify-center">
           <img
             src={`${getImgUrl(book.coverImage)}`}
             alt={book.title}
-            className="mb-8"
+            className="w-72 rounded-xl shadow-lg"
           />
         </div>
 
-        <div className="mb-5">
-          <p className="text-gray-700 mb-2">
-            <strong>Author:</strong> {book.author || "admin"}
-          </p>
-          <p className="text-gray-700 mb-2">
-            <strong>Published:</strong>{" "}
-            {new Date(book?.createdAt).toLocaleDateString()}
-          </p>
-          <p className="text-gray-700 mb-2 capitalize">
-            <strong>Category:</strong> {book.category}
-          </p>
-          <p className="text-gray-700">
-            <strong>Description:</strong> {book.description}
-          </p>
+        <div className="md:w-2/3">
+          <div className="mb-5">
+            <p className="text-gray-300 mb-2">
+              <strong className="text-white">Author:</strong> {book.author || "admin"}
+            </p>
+            <p className="text-gray-300 mb-2">
+              <strong className="text-white">Published:</strong>{" "}
+              {new Date(book?.createdAt).toLocaleDateString()}
+            </p>
+            <p className="text-gray-300 mb-2 capitalize">
+              <strong className="text-white">Category:</strong> {book.category}
+            </p>
+            <p className="leading-8 text-gray-300">
+              <strong className="text-white">Description:</strong> {book.description}
+            </p>
+          </div>
+          <button
+            onClick={() => handleAddToCart(book)}
+            className="btn-primary mt-8 flex items-center gap-2 px-8 py-3"
+          >
+            <FiShoppingCart />
+            <span>Add to Cart</span>
+          </button>
         </div>
-        <button
-          onClick={() => handleAddToCart(book)}
-          className="btn-primary px-6 space-x-1 flex items-center gap-1"
-        >
-          <FiShoppingCart />
-          <span>Add to Cart</span>
-        </button>
       </div>
     </div>
   );

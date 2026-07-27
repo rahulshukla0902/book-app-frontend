@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import BookCard from "../books/BookCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -34,16 +34,16 @@ const TopSellers = () => {
 
   return (
     <div className="py-10">
-      <h2 className="text-3xl font-semibold mb-6">Top Sellers</h2>
+      <h2 className="text-3xl font-bold text-white mb-6">Top Sellers</h2>
       <div className="mb-8 flex items-center">
         <select
           name="category"
           id="category"
-          className="border bg-[#EAEAEA] border-gray-300 rounded-md px-4 py-2 focus:outline-none"
+          className="w-64 h-12 rounded-md border border-white/20 bg-white/10 text-white px-4 backdrop-blur-md focus:outline-none"
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
           {categories.map((category, index) => (
-            <option value={category} key={index}>
+            <option value={category} key={index} className="rounded-md bg-[#111827] text-white">
               {category}
             </option>
           ))}
@@ -51,6 +51,8 @@ const TopSellers = () => {
       </div>
 
       <Swiper
+        grabCursor={true}
+        simulateTouch={true}
         slidesPerView={1}
         spaceBetween={30}
         navigation={true}
@@ -72,12 +74,13 @@ const TopSellers = () => {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination, Navigation]}
+        mousewheel={{ enabled: true, forceToAxis: true, releaseOnEdges: true }}
+        modules={[Pagination, Navigation, Mousewheel]}
         className="mySwiper"
       >
         {filteredBooks.length > 0 &&
           filteredBooks.map((book, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="bg-[#1A1A2E] border border-white/5 rounded-xl">
               <BookCard book={book} />
             </SwiperSlide>
           ))}

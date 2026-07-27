@@ -5,7 +5,7 @@ import news3 from "../../assets/news/news-3.png";
 import news4 from "../../assets/news/news-4.png";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Mousewheel } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -35,14 +35,14 @@ const news = [
   },
   {
     id: 4,
-    title: "Stock Markets Reach Record Highs Amid Economic Recovery",
+    title: "Market Record High Amid Economic Recovery",
     description:
       "Global stock markets have reached record highs as signs of economic recovery continue to emerge following the challenges posed by the global pandemic.",
     image: news4,
   },
   {
     id: 5,
-    title: "Innovative New Smartphone Released by Leading Tech Company",
+    title: "Innovative New Phones by Leading Tech Company",
     description:
       "A leading tech company has released its latest smartphone model, featuring cutting-edge technology, improved battery life, and a sleek new design.",
     image: news2,
@@ -52,7 +52,7 @@ const news = [
 function News() {
   return (
     <div className="py-16">
-      <h2 className="text-3xl font-semibold mb-6">News</h2>
+      <h2 className="text-3xl font-semibold text-white mb-6">News</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -71,20 +71,21 @@ function News() {
             spaceBetween: 50,
           },
         }}
-        modules={[Pagination, Navigation]}
+        mousewheel={{ enabled: true, forceToAxis: true, releaseOnEdges: true }}
+        modules={[Pagination, Navigation, Mousewheel]}
         className="mySwiper"
       >
         {news.map((item, index) => (
-          <SwiperSlide key={index}>
-            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-12">
+          <SwiperSlide key={index} className="bg-[#1A1A2E] border border-white/5 rounded-xl">
+            <div className="bg-[#1A1A2E] border border-white/5 rounded-xl flex flex-col sm:flex-row sm:justify-between items-center gap-12">
               <div className="py-4">
                 <Link to="/">
-                  <h3 className="text-lg font-medium hover:text-blue-500 mb-4">
+                  <h3 className="text-lg font-medium text-white hover:text-violet-300 transition-colors duration-200 mb-4">
                     {item.title}
                   </h3>
                 </Link>
                 <div className="w-12 h-[4px] bg-primary mb-5"></div>
-                <p className="text-sm text-gray-600">{item.description}</p>
+                <p className="text-sm text-gray-300 leading-7">{item.description}</p>
               </div>
               <div className="flex-shrink-0">
                 <img src={item.image} alt="" className="w-full object-cover" />

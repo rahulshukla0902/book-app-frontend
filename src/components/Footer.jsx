@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10 px-4">
+    <footer className="bg-white/5 backdrop-blur-xl border-t border-white/10 py-10 px-4">
       {/* Top Section */}
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         {/* Left Side - Logo and Nav */}
@@ -13,22 +13,22 @@ const Footer = () => {
           <img src={footerLogo} alt="Logo" className="mb-5 w-36" />
           <ul className="flex flex-col md:flex-row gap-4">
             <li>
-              <a href="#home" className="hover:text-primary">
+              <a href="#home" className="text-gray-300 hover:text-white transition-colors duration-200">
                 Home
               </a>
             </li>
             <li>
-              <a href="#services" className="hover:text-primary">
+              <a href="#services" className="text-gray-300 hover:text-white transition-colors duration-200">
                 Services
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-primary">
+              <a href="#about" className="text-gray-300 hover:text-white transition-colors duration-200">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#contact" className="hover:text-primary">
+              <a href="#contact" className="text-gray-300 hover:text-white transition-colors duration-200">
                 Contact
               </a>
             </li>
@@ -37,7 +37,7 @@ const Footer = () => {
 
         {/* Right Side - Newsletter */}
         <div className="md:w-1/2 w-full">
-          <p className="mb-4">
+          <p className="mb-4 text-gray-300 leading-7">
             Subscribe to our newsletter to receive the latest updates, news, and
             offers!
           </p>
@@ -45,9 +45,9 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Enter your email"
-              className="w-full px-4 py-2 rounded-l-md text-black"
+              className="w-full rounded-l-lg border border-white/10 bg-white/10 px-4 py-2 text-white placeholder:text-gray-400 focus:outline-none"
             />
-            <button className="bg-primary px-6 py-2 rounded-r-md hover:bg-primary-dark">
+            <button className="btn-primary rounded-r-lg px-6">
               Subscribe
             </button>
           </div>
@@ -59,12 +59,12 @@ const Footer = () => {
         {/* Left Side - Privacy Links */}
         <ul className="flex gap-6 mb-4 md:mb-0">
           <li>
-            <a href="#privacy" className="hover:text-primary">
+            <a href="#privacy" className="text-gray-400 hover:text-white transition-colors duration-200">
               Privacy Policy
             </a>
           </li>
           <li>
-            <a href="#terms" className="hover:text-primary">
+            <a href="#terms" className="text-gray-400 hover:text-white transition-colors duration-200">
               Terms of Service
             </a>
           </li>
@@ -76,7 +76,7 @@ const Footer = () => {
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary"
+            className="text-gray-300 hover:text-yellow-400 transition-colors duration-200"
           >
             <FaFacebook size={24} />
           </a>
@@ -84,7 +84,7 @@ const Footer = () => {
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary"
+            className="text-gray-300 hover:text-yellow-400 transition-colors duration-200"
           >
             <FaTwitter size={24} />
           </a>
@@ -92,7 +92,7 @@ const Footer = () => {
             href="https://instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-primary"
+            className="text-gray-300 hover:text-yellow-400 transition-colors duration-200"
           >
             <FaInstagram size={24} />
           </a>

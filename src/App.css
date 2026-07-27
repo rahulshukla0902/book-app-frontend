@@ -35,6 +35,20 @@
   @apply bg-primary  px-12 py-2 rounded-md text-base font-secondary font-bold hover:bg-secondary hover:text-white transition-all duration-200 cursor-pointer;
 }
 
-.html {
+html {
   scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: #02050a;
+  overflow-x: hidden;
 }
