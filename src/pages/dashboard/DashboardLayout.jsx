@@ -16,7 +16,7 @@ const DashboardLayout = () => {
   };
 
   return (
-    <section className="flex md:bg-gray-100 min-h-screen overflow-hidden">
+    <section className="flex md:bg-gray-100 min-h-screen">
       <aside className="hidden sm:flex sm:flex-col">
         <a
           href="/"

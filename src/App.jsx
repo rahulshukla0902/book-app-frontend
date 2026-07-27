@@ -9,42 +9,44 @@ function App() {
   return (
     <>
       <AuthProvider>
-        {/* Background Aurora Effect */}
-        <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
-          <Aurora colorStops={['#40e325', '#c699f2', '#4319f0']} speed={0.75} amplitude={0.8} blend={1.2} />
-        </div>
+        <div className="overflow-hidden">
+          {/* Background Aurora Effect */}
+          <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none">
+            <Aurora colorStops={['#40e325', '#c699f2', '#4319f0']} speed={0.75} amplitude={0.8} blend={1.2} />
+          </div>
 
-        {/* Main Content */}
-        <div>
-          <Navbar />
-          <div
-            className="
-              relative
-              z-10
-              flex
-              flex-col
-              mt-[20vh]
-              h-[calc(100vh-20vh)]
-              w-full
-              overflow-hidden
-            "
-          >
-            <main
+          {/* Main Content */}
+          <div>
+            <Navbar />
+            <div
               className="
-                flex-1
-                overflow-y-auto
-                [scrollbar-width:none]
-                max-w-screen-2xl
-                mx-auto
+                relative
+                z-10
+                flex
+                flex-col
+                mt-[20vh]
+                h-[calc(100vh-20vh)]
                 w-full
-                px-6
-                pb-16
-                font-primary
+                overflow-hidden
               "
             >
-              <Outlet />
-            <Footer />
-            </main>
+              <main
+                className="
+                  flex-1
+                  overflow-y-auto
+                  [scrollbar-width:none]
+                  max-w-screen-2xl
+                  mx-auto
+                  w-full
+                  px-6
+                  pb-16
+                  font-primary
+                "
+              >
+                <Outlet />
+              <Footer />
+              </main>
+            </div>
           </div>
         </div>
       </AuthProvider>
