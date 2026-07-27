@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-import { IoSearchOutline } from "react-icons/io5";
+import { IoSearchOutline, IoHomeOutline } from "react-icons/io5";
 import { HiOutlineUser } from "react-icons/hi";
 import { HiOutlineHeart } from "react-icons/hi";
 import { HiOutlineShoppingCart } from "react-icons/hi";
@@ -64,7 +64,7 @@ const Navbar = () => {
       >
         <div className="flex items-center md:gap-16 gap-4">
           <Link to="/">
-            <HiMiniBars3CenterLeft className={iconStyle} />
+            <IoHomeOutline className={iconStyle} />
           </Link>
 
           <div
